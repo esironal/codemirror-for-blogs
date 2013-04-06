@@ -15,12 +15,12 @@
     newTextArea = tempTextArea.cloneNode();
     newTextArea.value = codeElements[0].innerText;
 
-    mode = codes[0].getAttribute('data-lang') || 'clike';
-    theme = codes[0].getAttribute('data-theme') || 'default';
+    mode = codeElements[0].getAttribute('data-lang') || 'clike';
+    theme = codeElements[0].getAttribute('data-theme') || 'default';
 
-    codes[0].parentNode.replaceChild(newTextarea, codes[0]);
+    codeElements[0].parentNode.replaceChild(newTextArea, codeElements[0]);
 
-    editor = CM.fromTextArea(newTextarea, { lineNumbers: true });
+    editor = CM.fromTextArea(newTextArea, { lineNumbers: true });
     editor.setOption('theme', theme);
     editor.setOption('mode', mode);
 
